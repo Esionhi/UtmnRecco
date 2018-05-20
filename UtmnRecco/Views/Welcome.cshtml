@@ -1,0 +1,21 @@
+﻿<div class="text">
+	Вставьте ссылку на свою страницу ВК и на основе информации вашего профиля мы порекомендуем в какой институт ТюмГУ Вам лучше поступить.
+</div>
+<form id="formWelcome" class="form-welcome" asp-action="result" method="get">
+	<input name="link" type="text" placeholder="https://vk.com/sashagrey" />
+	<input class="go-btn" type="submit" value="Поехали"/>
+</form>
+
+@*<script>
+	var nickInput = document.getElementById('nickInput');
+	var formWelcome = document.getElementById('formWelcome');
+	formWelcome.onsubmit = function () {
+		var input = nickInput.value;
+		var nick = input
+			.replace('https://vk.com/', '')
+			.replace('vk.com/', '')
+			.replace('/', '');
+		window.location.href = nick;
+		return false;
+	};
+</script>*@

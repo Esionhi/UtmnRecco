@@ -1,0 +1,23 @@
+﻿@model Dictionary<UtmnRecco.Models.Faculties, double>
+<div class="summary-div">
+	<img width="100" height="100" src="@ViewData["AvatarUrl"]" class="summary-avatar"/>
+	<div>
+		<b>@ViewData["Name"]</b>,<br />мы рекомендуем Вам поступить в<br /><a href="@ViewData["Facultylink"]" class="summary-faculty-link">@ViewData["FacultyName"]</a>
+	</div>
+</div>
+<table class="rating-table">
+	<thead>Наши вычисления</thead>
+	<tbody>
+		<tr>
+			<th>Институт</th>
+			<th>R</th>
+		</tr>
+		@foreach (var kv in Model.OrderBy(kv => kv.Value))
+		{
+			<tr>
+				<td>@kv.Key</td>
+				<td>@kv.Value.ToString("f")</td>
+			</tr>
+		}
+	</tbody>
+</table>
